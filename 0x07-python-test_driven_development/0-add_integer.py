@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/python3
 def add_integer(a, b=98):
     """Return the addition of two integers a and b"""
     if not isinstance(a, int) and not isinstance(a, float):
