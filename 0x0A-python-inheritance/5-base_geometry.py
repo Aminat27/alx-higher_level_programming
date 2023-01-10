@@ -5,4 +5,3 @@
 class BaseGeometry:
     """Represent BaseGeometry"""
     pass
-
