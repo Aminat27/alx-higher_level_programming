@@ -49,7 +49,7 @@ case 4: empty list
 >>>
 -------------------------------------------
 
-case 4: unqiue number
+case 5: unqiue number
 
 >>> my_list = MyList()
 >>> my_list.append(1)
