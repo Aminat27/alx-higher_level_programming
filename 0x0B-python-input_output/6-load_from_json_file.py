@@ -11,5 +11,5 @@ def load_from_json_file(filename):
     Raises:
         Exception: when the object can't be encoded
     """
-    with open(filename, "w") as f:
-        json.dump(my_obj, f)
+    with open(filename) as f:
+        return json.load(f)
