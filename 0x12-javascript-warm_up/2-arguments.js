@@ -7,11 +7,8 @@
    which the js engine runs.
    so process.argv[2] ... contains users passed in arguments.
 */
-
-  if (process.argv.length < 3) {
-    console.log('No argument');
-  } else {
-    console.log('Argument found');
-  }
-
-
+if (process.argv.length < 3) {
+  console.log('No argument');
+} else {
+  console.log('Argument found');
+}
