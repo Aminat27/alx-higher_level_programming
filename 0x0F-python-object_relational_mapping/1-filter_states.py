@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""List all states from the database in ascending order of states"""
+"""List  states starting with N from the database in a
+    scending order of id of states
+"""
 import MySQLdb
 import sys
 
@@ -11,7 +13,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
 # Define the query to select all states from the table
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
 
 # Execute the query
     cursor.execute(query)
