@@ -21,4 +21,3 @@ if __name__ == "__name__":
     states = session.query(State).order_by(State.id)
     for state in states:
         print("{}: {}".format(state.id, state.name))
-
