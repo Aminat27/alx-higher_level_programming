@@ -1,9 +1,6 @@
 #!/usr/bin/python3
-
-
 """
-sunday moses
-a script that lists all State objects staring with a
+prints all states that contain the lettter 'a'
 """
 from sys import argv
 from model_state import Base, State
