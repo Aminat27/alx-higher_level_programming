@@ -17,8 +17,9 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    for instance in (session.query(State.name, City.id, City.name)
-                     .filter(State.id == City.state_id)):
-        print(instance[0] + ": (" + str(instance[1]) + ") " + instance[2])
+    st_cty = session.query(State, City).filter(State.id == City.state_id)
+
+    for state, city in st_cty:
+        print("{}: ({}) {}".format(state.name, city.id, city.name))
 
     session.close()
