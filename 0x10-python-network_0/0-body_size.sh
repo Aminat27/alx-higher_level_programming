@@ -1,3 +1,3 @@
 #!/bin/bash
-# Script that sent a get request to URS and display the body
-curl sI "$1" | grep "Content-Length:" | cut -d " " -f 2
+# Script that shows the Content-Length from a HTTP request
+curl -sI "$1" | grep "Content-Length:" | cut -d " " -f 2
