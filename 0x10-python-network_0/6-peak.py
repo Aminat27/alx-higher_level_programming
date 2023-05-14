@@ -3,23 +3,33 @@
 
 
 def find_peak(list_of_integers):
-    if list_of_integers == []:
+    """finds peak"""
+    listints = list_of_integers
+    low = 0
+    high = len(listints) - 1
+    # check for empty list
+    if high < 0:
         return None
-
-    length = len(list_of_integers)
-    mid = int(length / 2)
-    li = list_of_integers
-
-    if mid - 1 < 0 and mid + 1 >= length:
-        return li[mid]
-    elif mid - 1 < 0:
-        return li[mid] if li[mid] > li[mid + 1] else li[mid + 1]
-    elif mid + 1 >= length:
-        return li[mid] if li[mid] > li[mid - 1] else li[mid - 1]
-
-    if li[mid - 1] < li[mid] > li[mid + 1]:
-        return li[mid]
-
-    if li[mid + 1] > li[mid - 1]:
-        return find_peak(li[mid:])
-    return find_peak(li[:mid])
+    for i in range(low, high):
+        mid = low + (high - low) // 2
+        # check for peak at middle
+        if ((listints[mid] > listints[mid - 1]) and
+                (listints[mid] > listints[mid + 1])):
+            return listints[mid]
+        # check for peak at start of list
+        elif (listints[low] > listints[low + 1] and
+              not listints[:low]):
+            return listints[low]
+        # check for peak at end of list
+        if (listints[high] > listints[high - 1] and
+                not listints[high + 1:]):
+            return listints[high]
+        # reset start
+        elif listints[mid] > listints[mid + 1]:
+            low = mid
+        # reset end
+        elif listints[mid] > listints[mid - 1]:
+            high = mid
+        else:
+            high = mid
+    return listints[i]
